@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
@@ -35,6 +36,21 @@ public class AutomationPractice {
 		
 		driver.findElement(By.id("customer_lastname")).sendKeys("Rahman");
 		System.out.println("last name typed");
+		
+		driver.findElement(By.id("passwd")).sendKeys("12345");
+		System.out.println("password typed");
+		
+		Select days = new Select(driver.findElement(By.id("days")));
+		days.selectByValue("10");
+		System.out.println("days selected");
+		
+		Select months = new Select(driver.findElement(By.id("months")));
+		months.selectByValue("8");
+		System.out.println("months selected");
+		
+		Select years = new Select(driver.findElement(By.id("years")));
+		years.selectByValue("1985");
+		System.out.println("years selected");
 	}
 
 }
