@@ -14,6 +14,12 @@ public class AutomationPractice {
 		
 		driver.findElement(By.className("login")).click();
 		System.out.println("Login successfully done");
+		
+		driver.findElement(By.id("email_create")).sendKeys("15203060@iubat.edu");
+		System.out.println("Entering email successfully done");
+		
+		driver.findElement(By.id("SubmitCreate")).click();
+		System.out.println("Account create successfully done");
 
 	}
 
