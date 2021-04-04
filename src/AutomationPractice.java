@@ -51,6 +51,45 @@ public class AutomationPractice {
 		Select years = new Select(driver.findElement(By.id("years")));
 		years.selectByValue("1985");
 		System.out.println("years selected");
+		
+		driver.findElement(By.id("newsletter")).click();
+		System.out.println("newsletter checkbox selected");
+		
+		driver.findElement(By.id("company")).sendKeys("Brain station");
+		System.out.println("company name typed");
+		
+		driver.findElement(By.id("address1")).sendKeys("Wapda road, Ashish lane");
+		System.out.println("Address typed");
+		
+		driver.findElement(By.id("address2")).sendKeys("6C, 162/1A, Ashish Lane");
+		System.out.println("Address2 typed");
+		
+		driver.findElement(By.id("city")).sendKeys("Rampura");
+		System.out.println("City typed");
+		
+		Select state = new Select(driver.findElement(By.id("id_state")));
+		state.selectByVisibleText("Arizona");
+		System.out.println("State selected");
+		
+		driver.findElement(By.id("postcode")).sendKeys("1219");
+		System.out.println("postcode typed");
+		
+		driver.findElement(By.id("other")).sendKeys("N/A");
+		
+		driver.findElement(By.id("phone_mobile")).sendKeys("+8801722336655");
+		System.out.println("Phone number typed");
+		
+		driver.findElement(By.id("alias")).sendKeys("Same as above");
+		
+		driver.findElement(By.id("submitAccount")).submit();
+		System.out.println("Submit successfully");
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
+		
+		String email = driver.findElement(By.id("email")).getAttribute("value");
+		if(email.equals("15203060@iubat.edu")) {
+			System.out.println("Registration Ok");
+		}
 	}
 
 }
